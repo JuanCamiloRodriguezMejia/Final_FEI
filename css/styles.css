@@ -50,6 +50,10 @@ body{
     background-color: rgba(242, 95, 58, 0.8);
 }
 
+.hamburger{
+    display: none;
+}
+
 /* Main - Primera sección */
 .contenedorTextos{
     display: flex;
@@ -111,7 +115,6 @@ body{
 }
 
 .descripciones p{
-    position: relative;
     color: rgb(143, 148, 167);
     line-height: 1.595rem;
     margin: 1rem 0 2rem 0;
@@ -119,28 +122,17 @@ body{
 
 #uno::before{
     content: '01';
-    position: absolute;
-    left: -25%;
-    bottom: -0.5rem;
-    padding: 0.5rem 1.5rem;
-    background-color: rgb(242, 95, 58);
-    border-radius: 30px;
-    color: #FFFF;
 }
 
 #dos::before{
     content: '02';
-    position: absolute;
-    left: -25%;
-    bottom: -0.5rem;
-    padding: 0.5rem 1.5rem;
-    background-color: rgb(242, 95, 58);
-    border-radius: 30px;
-    color: #FFFF;
 }
 
 #tres::before{
     content: '03';
+}
+
+#uno::before, #dos::before, #tres::before{
     position: absolute;
     left: -25%;
     bottom: -0.5rem;
@@ -169,23 +161,29 @@ body{
 .cliente{
     text-align: center;
     background-color: #FAFAFA;
+    position: relative;
 }
 
 .cliente h3{
     color: rgb(35, 44, 81);
-    margin-bottom: 1rem;
+    margin: 3rem 0 1rem 0;
 }
 
 .cliente img{
     width: 15%;
-    position: relative;
-    bottom: 20%;
+    position: absolute;
+    left: 42.5%;
+    top: -20%;
 }
 
 .cliente p{
     color: rgb(143, 148, 167);
     line-height: 1.595rem;
     margin: 0 2rem 2rem 2rem;
+}
+
+.carrusel{
+    display: none;
 }
 
 /* Estilos sección naranja */
@@ -196,15 +194,16 @@ body{
 
 .contenedorNaranja{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: #FFFF;
-    height: 20vh;
     margin: 0 8vw;
 }
 
 .contenedorNaranja h2{
     font-size: 2rem;
+    margin: 5vh 0;
 }
 
 .botonBlanco{
@@ -214,6 +213,7 @@ body{
     border-radius: 50px;
     color: rgb(242, 95, 58);
     transition: all 0.3s;
+    margin-bottom: 5vh;
 }
 
 .botonBlanco:hover{
@@ -283,6 +283,10 @@ body{
     margin-top: 3rem;
 }
 
+.copyrMovil{
+    display: none;
+}
+
 #email{
     height: 2.5rem;
     border-radius: 30px;
@@ -321,4 +325,154 @@ body{
     font-size: 0.5rem;
     color: #ff0000;
     font-style: italic;
+}
+
+/* Utilicé ancho máximo de 500px para poderlo ver en mi teléfono, pero está hecho para 375px */
+@media (max-width: 500px) {
+
+    /* Body */
+    body{
+        font-size: 12px;
+    }
+
+    /* Header */
+    .headerIndex{
+        margin: 7vh 8vw;
+    }
+
+    .hamburger{
+        display: inline-block;
+    }
+
+    .inicio{
+        display: none;
+    }
+
+    .enlaces{
+        display: none;
+    }
+
+    .logo{
+        width: 7rem;
+    }
+
+    .boton{
+        box-shadow: 0px 16px 31px -11px rgba(242,95,58,0.75);
+        -webkit-box-shadow: 0px 16px 31px -11px rgba(242,95,58,0.75);
+        -moz-box-shadow: 0px 16px 31px -11px rgba(242,95,58,0.75);
+    }
+
+    /* Main */
+    .contenedorTextos{
+        flex-direction: column;
+        align-items: center;
+        margin: 8vh 8vw;
+    }
+
+    .subcontenedor, .textoSecundario, .descripciones, .grafico{
+        width: 100%;
+    }
+
+    .principal{
+        order: 1;
+        text-align: center;
+    }
+
+    .tituloPrincipal{
+        font-size: 2.3rem;
+    }
+
+    .textoSecundario{
+        order: 2;
+        text-align: center;
+    }
+
+    .descripciones{
+        order: 3;
+    }
+
+    .descripciones h3{
+        position: static;
+        padding: 0.5rem 1rem 0.5rem 0;
+        background-color: rgb(255, 239, 234);
+        border-radius: 30px 0 0 30px;
+    }
+
+    /* Descripciones */
+    #uno::before, #dos::before, #tres::before{
+        padding: 0.5rem 1.2rem;
+        margin-right: 0.5rem;
+        position: static;
+    }
+
+    /* Clientes */
+    .noMostrar{
+        display: none;
+    }
+
+    .secClientes h2{
+        margin-bottom: 5rem;
+    }
+
+    .contenedorClientes{
+        flex-direction: column;
+    }
+
+    .carrusel{
+        display: inline-block;
+        color: rgb(242, 95, 58);
+        margin-top: 1rem;
+    }
+
+    .cliente img{
+        top: -11%;
+    }
+
+    /* Sección naranja */
+    .contenedorNaranja{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .botonBlanco{
+        box-shadow: 0px 16px 31px -11px rgba(100, 100, 100, 0.75);
+        -webkit-box-shadow: 0px 16px 31px -11px rgba(100, 100, 100, 0.75);
+        -moz-box-shadow: 0px 16px 31px -11px rgba(100, 100, 100, 0.75);
+    }
+
+    /* Footer */
+    .footer{
+        flex-direction: column;
+    }
+
+    .icono{
+        font-size: 1.4rem;
+        margin: 0 0.5rem 4rem 0.5rem;
+    }
+
+    .formFooter{
+        margin: 2rem 0 2.5rem 0;
+    }
+
+    .copyr{
+        display: none;
+    }
+
+    .contenedorListas{
+        order: 1;
+    }
+    
+    .contenedorLogo{
+        flex-direction: column-reverse;
+        order: 2;
+    }
+
+    .copyrMovil{
+        order: 3;
+        display: inline-block;
+        color: rgb(143, 148, 167);
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+    }
 }

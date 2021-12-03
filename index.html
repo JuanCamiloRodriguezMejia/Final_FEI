@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="headerIndex">
-        <img src="./imagenes/logo.svg" alt="Logo">
+        <img src="./imagenes/logo.svg" alt="Logo" class="logo">
 
         <nav>
             <ul class="enlaces">
@@ -26,12 +26,13 @@
             </ul>
         </nav>
 
-        <a href="" class="boton">Get Started</a>
+        <a href="" class="boton inicio">Get Started</a>
+        <img src="./imagenes/icon-hamburger.svg" alt="Hamburger" class="hamburger">
     </header>
 
     <main>
         <section class="contenedorTextos">
-            <article class="subcontenedor">
+            <article class="subcontenedor principal">
                 <h1 class="tituloPrincipal">
                     Bring everyone <br>
                     together to build <br>
@@ -47,8 +48,8 @@
                 <a href="" class="boton">Get Started</a>
             </article>
 
-            <article class="subcontenedor">
-                <img src="./imagenes/illustration-intro.svg" alt="Graphics">
+            <article class="subcontenedor imagen">
+                <img src="./imagenes/illustration-intro.svg" alt="Graphics" class="grafico">
             </article>
 
             <article class="textoSecundario">
@@ -91,7 +92,7 @@
             <h2>What they've said</h2>
             
             <div class="contenedorClientes">
-                <article class="cliente">
+                <article class="cliente noMostrar">
                     <img src="./imagenes/avatar-anisha.png" alt="Anisha">
 
                     <h3>Anisha Li</h3>
@@ -113,7 +114,7 @@
                     </p>
                 </article>
 
-                <article class="cliente">
+                <article class="cliente noMostrar">
                     <img src="./imagenes/avatar-richard.png" alt="Robert">
 
                     <h3>Richard Watts</h3>
@@ -123,6 +124,13 @@
                         I can´t stop recommending them to everyone i talk to!”
                     </p>
                 </article>
+
+                <div class="carrusel">
+                    <i class="far fa-dot-circle"></i>
+                    <i class="fas fa-dot-circle"></i>
+                    <i class="far fa-dot-circle"></i>
+                    <i class="far fa-dot-circle"></i>
+                </div>
             </div>
 
             <a href="" class="boton">Get Started</a>
@@ -181,6 +189,8 @@
 
             <p class="copyr">Copyright 2020. All Rights Reserved</p>
         </div>
+
+        <p class="copyrMovil">Copyright 2020. All Rights Reserved</p>
     </footer>
 </body>
 </html>
